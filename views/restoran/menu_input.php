@@ -2,13 +2,10 @@
 require_once __DIR__ . '/../../model/restoran_model.php';
 require_once __DIR__ . '/../../model/menu_model.php';
 
-session_start();
-
 $modelRestoran = new RestoranModel();
 
 $restoran_id_login = $_SESSION['restoran_id'];
 
-// Ambil data restoran berdasarkan ID login
 $restoranLogin = $modelRestoran->getRestoranById($restoran_id_login);
 ?>
 

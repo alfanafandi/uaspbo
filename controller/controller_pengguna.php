@@ -66,7 +66,6 @@ class controllerPengguna
 
     function addRiwayat($user_id, $keranjangItems, $totalPrice)
     {
-        // Koneksi ke database
         $host = 'localhost';
         $db = 'ProjectDB';
         $user = 'root';
@@ -82,7 +81,7 @@ class controllerPengguna
             $stmt = $pdo->prepare($query);
             $stmt->execute([
                 ':user_id' => $user_id,
-                ':items' => json_encode($keranjangItems), // Simpan items dalam format JSON
+                ':items' => json_encode($keranjangItems),
                 ':total_price' => $totalPrice
             ]);
 

@@ -8,10 +8,10 @@ class controllerDiskon
     private $diskonModel;
     private $restoranModel;
 
-    public function __construct(RestoranModel $restoranModel)
+    public function __construct()
     {
-        $this->restoranModel = $restoranModel;
-        $this->diskonModel = new DiskonModel($restoranModel);
+        $this->restoranModel = new RestoranModel();
+        $this->diskonModel = new DiskonModel($this->restoranModel);
     }
 
     public function listDiskonsByRestoran($restoran_id)

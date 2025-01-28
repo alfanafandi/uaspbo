@@ -14,16 +14,15 @@ $modelMenu = new MenuModel($modelRestoran);
 $modelPengguna = new PenggunaModel();
 $modelTransaksi = new TransaksiModel($modelPengguna);
 $modelVoucher = new VoucherModel();
-$modelDiskon = new DiskonModel($modelRestoran);
+$modelDiskon = new DiskonModel();
 
 // Objek controller
 $objectRestoran = new controllerRestoran();
-$objectMenu = new controllerMenu($modelRestoran);
+$objectMenu = new controllerMenu();
 $objectPengguna = new controllerPengguna();
 $objectTransaksi = new controllerTransaksi($modelPengguna);
 $objectVoucher = new controllerVoucher();
-$objectDiskon = new controllerDiskon($modelRestoran);
-
+$objectDiskon = new controllerDiskon();
 
 if (!isset($_SESSION['user_id']) && !isset($_SESSION['restoran_id']) && (!isset($_GET['modul']) || ($_GET['modul'] != 'login' && $_GET['modul'] != 'register'))) {
     header('Location: index.php?modul=login');

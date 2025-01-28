@@ -2,15 +2,10 @@
 
 abstract class Node
 {
-    public $id;
+    private $id;
 
     function __construct($id)
     {
         $this->id = $id;
-    }
-
-    public function getId()
-    {
-        return $this->id;
     }
 }

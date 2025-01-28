@@ -7,9 +7,9 @@ class DiskonModel
     private $db;
     private $restoranModel;
 
-    public function __construct(RestoranModel $restoranModel)
+    public function __construct()
     {
-        $this->restoranModel = $restoranModel;
+        $this->restoranModel = new RestoranModel();
         $this->db = new mysqli('localhost', 'root', '', 'ProjectDB');
         if ($this->db->connect_error) {
             die("Connection failed: " . $this->db->connect_error);

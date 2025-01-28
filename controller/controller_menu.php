@@ -8,10 +8,10 @@ class controllerMenu
 
     private $restoranModel;
 
-    public function __construct(RestoranModel $restoranModel)
+    public function __construct()
     {
-        $this->restoranModel = $restoranModel;
-        $this->menuModel = new MenuModel($restoranModel);
+        $this->restoranModel = new RestoranModel();
+        $this->menuModel = new MenuModel($this->restoranModel);
     }
 
     public function listMenus()
